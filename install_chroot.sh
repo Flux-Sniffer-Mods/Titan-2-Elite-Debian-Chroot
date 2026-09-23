@@ -240,10 +240,16 @@ run_in_chroot "
     upg=\"\$(apt-get -s full-upgrade 2>/dev/null | awk '/^Inst /{print \$2}' | tr '\\n' ' ')\"
     # A saved Klassy build is tied to one KWin version: install exactly that one when
     # the archive still has it, and hold it, so the build is never redone.
-    bver=\"\$(sed -n 's/^kwin=\\([^ ]*\\).*/\\1/p' /usr/local/share/titan-addons/bundle.key 2>/dev/null)\"
+    # No bundle is the normal case for a plain install. sed exits 2 on a missing file,
+    # and with 'set -e' that killed the whole installation here, silently, before a
+    # single package was installed.
+    bver=''
+    if [ -f /usr/local/share/titan-addons/bundle.key ]; then
+        bver=\"\$(sed -n 's/^kwin=\\([^ ]*\\).*/\\1/p' /usr/local/share/titan-addons/bundle.key 2>/dev/null || true)\"
+    fi
     if [ -n \"\$bver\" ] && apt-cache madison kwin-x11 | grep -q \" \$bver \"; then
         pin=''; for k in kwin-x11 kwin-common kwin-data libkwin6 kwin-x11-data; do
-            apt-cache madison \$k 2>/dev/null | grep -q \" \$bver \" && pin=\"\$pin \$k=\$bver\"; done
+            apt-cache madison \$k 2>/dev/null | grep -q \" \$bver \" && pin=\"\$pin \$k=\$bver\" || true; done
         echo \"[*] Pinning KWin to \$bver to match the saved Klassy build\"
         want=\"\$(printf '%s' \"\$want\" | sed 's/ kwin-x11\\b//')\"
     else
