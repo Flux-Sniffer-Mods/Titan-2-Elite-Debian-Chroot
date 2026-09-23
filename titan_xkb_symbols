@@ -1,10 +1,10 @@
 // titan_xkb_symbols - X keyboard layout for the Unihertz Titan 2 Elite, installed
-// as the "titan" layout. Generated from the Pastiera keyboard app's Titan 2 Elite
-// Alt map and its symbols (Sym) page. Alt and Sym behave as in Pastiera: tap for
+// as the "titan" layout. Generated from Flux Keyboard's (built on Pastiera) Titan 2
+// Elite Alt map and its symbols (Sym) page. Alt and Sym behave as in Flux Keyboard: tap for
 // the next key only, double-tap to lock, hold for as long as it is held.
 //   Level 1/2: letter / Shift+letter
-//   Level 3/4: Alt+key        (Pastiera Alt map)
-//   Level 5/6: Sym+key        (Pastiera SYM symbols page; Shift gives the same)
+//   Level 3/4: Alt+key        (Flux Keyboard Alt map)
+//   Level 5/6: Sym+key        (Flux Keyboard SYM symbols page; Shift gives the same)
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
     include "us(basic)"
@@ -36,7 +36,7 @@ xkb_symbols "basic" {
     key <AB06> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ n, N, U002C, U002C, U00A7, U00A7, U002C, U002C ] };  // Alt: ,  Sym: §
     key <AB07> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ m, M, U002E, U002E, U00A3, U0024, U002E, U002E ] };  // Alt: .  Sym: £ (Shift: $)
 
-    // Alt = Pastiera Alt layer, Sym (sent by the bridge as Right Alt) = SYM layer.
+    // Alt = Flux Keyboard Alt layer, Sym (sent by the bridge as Right Alt) = SYM layer.
     key <LALT> { type[Group1] = "ONE_LEVEL", symbols[Group1] = [ ISO_Level3_Latch ] };
     key <RALT> { type[Group1] = "ONE_LEVEL", symbols[Group1] = [ ISO_Level5_Latch ] };
     modifier_map Mod5 { <LALT> };

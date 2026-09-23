@@ -1,6 +1,6 @@
-# Titan 2 Elite: Debian and KDE Plasma
+# Titan 2 Elite Debian Chroot
 
-Run a full Debian Linux desktop on a Unihertz Titan 2 Elite phone, using the phone's
+Run a full Debian Linux desktop on a rooted Unihertz Titan 2 Elite phone, using the phone's
 own physical keyboard, and switch between Linux and Android without rebooting.
 
 The desktop is KDE Plasma. It runs in a *chroot*: a complete Debian system installed in
@@ -55,9 +55,9 @@ trapped in the desktop.
 
 You need:
 
-- A Unihertz Titan 2 Elite, rooted with Magisk
+- A Unihertz Titan 2 Elite, rooted with [Magisk](https://github.com/topjohnwu/Magisk)
 - [Termux](https://termux.dev) installed (from F-Droid or GitHub, not the Play Store)
-- The Termux:X11 app installed
+- The [Termux:X11](https://github.com/termux/termux-x11) app installed
 - Around 8 GB free on internal storage
 - A network connection you do not mind using for a few GB of downloads
 
@@ -133,7 +133,7 @@ when they ask for root, so `bash ~/boot_desktop.sh` works on any filesystem.
 
 ## Home screen widgets
 
-Install the Termux:Widget app, then add its widget to the Android home screen and pick a
+Install the [Termux:Widget](https://github.com/termux/termux-widget) app, then add its widget to the Android home screen and pick a
 task. Both tasks run in the background with no terminal window.
 
 | Task | What it does |
@@ -224,12 +224,12 @@ Every part writes its own log:
 
 A few common situations:
 
-- **Keyboard types into Android instead of Linux** - the bridge decides this from which
+- **Keyboard types into Android instead of Linux**: the bridge decides this from which
   app Android reports as focused. `ROUTE_DEBUG=1 bash ~/boot_desktop.sh` logs that
   decision once a second to `~/boot_desktop.log`.
-- **Window buttons sit under the rounded corner** - raise `CORNER_PAD` or `SPACER_PX`.
-- **Desktop feels slow** - try `ANIMATIONS=0`, then `COMPOSITING=0`.
-- **Graphics glitches** - try `GPU=0`.
+- **Window buttons sit under the rounded corner**: raise `CORNER_PAD` or `SPACER_PX`.
+- **Desktop feels slow**: try `ANIMATIONS=0`, then `COMPOSITING=0`.
+- **Graphics glitches**: try `GPU=0`.
 
 ## What each file does
 
@@ -272,9 +272,30 @@ To skip the add-ons entirely:
 ADDONS=0 bash ~/boot_desktop.sh
 ```
 
-## Credits
+## License and credits
+
+Created by [Flux-Sniffer-Mods](https://github.com/Flux-Sniffer-Mods) and released
+under the [GNU General Public License v3.0 or later](LICENSE).
+
+The prebuilt add-ons archive contains compiled binaries from Klassy and KDE Rounded
+Corners, which are other people's projects under their own licenses.
+[THIRD-PARTY.md](THIRD-PARTY.md) records what is in it, who wrote it and where to get
+the source. Delete the two `titan-addons-bundle.*` files before installing if you would
+rather compile those from source yourself.
+
+This project builds on:
 
 - [Klassy](https://github.com/paulmcauley/klassy) window decoration by Paul McAuley
 - [KDE Rounded Corners](https://github.com/matinlotfali/KDE-Rounded-Corners) by Matin Lotfali
 - [Plasma Drawer](https://github.com/p-connor/plasma-drawer) launcher by p-connor
-- Termux, Termux:X11 and Termux:Widget by the Termux project
+- [Termux](https://termux.dev), Termux:X11 and Termux:Widget by the Termux project
+
+## More for the Titan 2 Elite
+
+- [Flux Keyboard](https://github.com/Flux-Sniffer-Mods/Flux-Keyboard): a
+  hardware-keyboard input method built on Pastiera and tuned for the Titan 2 Elite, with GIF, emoji and
+  symbol search, spell checking and autofill in every app, and a status bar made
+  for its display.
+- [Titan 2 Elite Telephoto Fix](https://github.com/Flux-Sniffer-Mods/Titan-2-Elite-Telephoto-Fix):
+  unlocks the hidden 6.8 mm optical telephoto camera and adds telephoto photo and
+  video to Google Camera.

@@ -2,6 +2,12 @@
 # alongside Android on a Unihertz Titan 2 Elite phone.
 # Shared code used by install_chroot.sh and boot_desktop.sh. Not run on its own.
 #
+# Copyright (C) 2026 Flux-Sniffer-Mods
+# This program is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software Foundation,
+# either version 3 of the License, or (at your option) any later version. It comes with
+# ABSOLUTELY NO WARRANTY. See the LICENSE file, or <https://www.gnu.org/licenses/>.
+#
 # New to this project? Read README.md first, it explains the whole setup:
 # https://github.com/Flux-Sniffer-Mods/Titan-2-Elite-Debian-Chroot
 #

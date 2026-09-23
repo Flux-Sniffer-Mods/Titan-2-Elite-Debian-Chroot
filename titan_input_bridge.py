@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """
+Copyright (C) 2026 Flux-Sniffer-Mods. Licensed under GPL-3.0-or-later;
+see the LICENSE file or <https://www.gnu.org/licenses/>. No warranty.
+
 Part of: Titan 2 Elite Debian Chroot - a full Debian/KDE desktop running
 alongside Android on a Unihertz Titan 2 Elite phone.
 Routes the keyboard, touchscreen and volume keys between Linux and Android.
@@ -18,8 +21,8 @@ Which way input goes depends on what is on screen (the boot script writes
 /tmp/titan_route once a second):
 
   Desktop (Termux:X11) in front
-    * Keyboard is typed straight into X via XTest, so the Titan keymap (Pastiera's
-      Alt/Sym layers) applies and Pastiera never sees the keys.
+    * Keyboard is typed straight into X via XTest, so the Titan keymap (Flux Keyboard's
+      Alt/Sym layers) applies and Flux Keyboard never sees the keys.
     * Touchscreen is taken over and turned into Android-style gestures:
         tap = click, drag = scroll (flicks glide), long-press + lift = right click,
         long-press + drag = mouse drag, two-finger drag = scroll,
@@ -27,7 +30,7 @@ Which way input goes depends on what is on screen (the boot script writes
       Touches near an edge snap the pointer to that edge (reveals the panel).
   Any Android app in front (or the route file is stale)
     * Keyboard goes to Android through an exact clone of the Titan keyboard,
-      so Pastiera and the Titan's own key layout work as normal.
+      so Flux Keyboard and the Titan's own key layout work as normal.
     * Touchscreen is left alone.
 
 Home / app-switch / back / power always go to Android, so you can always leave.
@@ -143,7 +146,7 @@ def find_devices():
 
 def make_native_clone(phys):
     """Exact identity + capabilities of the real keyboard, so Android uses its own
-    key layout / character map (Pastiera, Alt/Sym, Home, touch-scroll)."""
+    key layout / character map (Flux Keyboard, Alt/Sym, Home, touch-scroll)."""
     info = phys.info
     ident = dict(name=phys.name, vendor=info.vendor, product=info.product,
                  version=info.version, bustype=info.bustype, phys=phys.phys or "")

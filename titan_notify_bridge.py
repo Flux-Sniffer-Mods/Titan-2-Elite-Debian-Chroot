@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """
+Copyright (C) 2026 Flux-Sniffer-Mods. Licensed under GPL-3.0-or-later;
+see the LICENSE file or <https://www.gnu.org/licenses/>. No warranty.
+
 Part of: Titan 2 Elite Debian Chroot - a full Debian/KDE desktop running
 alongside Android on a Unihertz Titan 2 Elite phone.
 Copies Linux notifications into the Android notification shade.
