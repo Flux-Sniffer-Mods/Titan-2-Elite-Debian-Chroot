@@ -1,0 +1,20 @@
+# Logs written at run time
+*.log
+
+# Per-device settings, written by boot_desktop.sh on the phone.
+# Deliberately not committed: it records one phone's screen measurements.
+titan-display.conf
+
+# Working copies the install one-liner creates in the Termux home folder
+.titan-src/
+.titan-up/
+.titan-repo/
+
+# Archives built locally. The add-on bundle (titan-addons-bundle.tar.gz) is
+# committed on purpose, so it is not matched here.
+*.zip
+
+# Editor and OS leftovers
+*~
+*.swp
+.DS_Store

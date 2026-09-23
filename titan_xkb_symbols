@@ -1,0 +1,49 @@
+// titan_xkb_symbols - X keyboard layout for the Unihertz Titan 2 Elite, installed
+// as the "titan" layout. Generated from the Pastiera keyboard app's Titan 2 Elite
+// Alt map and its symbols (Sym) page. Alt and Sym behave as in Pastiera: tap for
+// the next key only, double-tap to lock, hold for as long as it is held.
+//   Level 1/2: letter / Shift+letter
+//   Level 3/4: Alt+key        (Pastiera Alt map)
+//   Level 5/6: Sym+key        (Pastiera SYM symbols page; Shift gives the same)
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+    include "us(basic)"
+    name[Group1] = "English (Titan 2 Elite)";
+    key <AD01> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ q, Q, 0, 0, U007E, U007E, 0, 0 ] };  // Alt: 0  Sym: ~
+    key <AD02> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ w, W, 1, 1, U0060, U0060, 1, 1 ] };  // Alt: 1  Sym: `
+    key <AD03> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ e, E, 2, 2, U007B, U007B, 2, 2 ] };  // Alt: 2  Sym: {
+    key <AD04> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ r, R, 3, 3, U007D, U007D, 3, 3 ] };  // Alt: 3  Sym: }
+    key <AD05> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ t, T, U0028, U0028, U005B, U005B, U0028, U0028 ] };  // Alt: (  Sym: [
+    key <AD06> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ y, Y, U0029, U0029, U005D, U005D, U0029, U0029 ] };  // Alt: )  Sym: ]
+    key <AD07> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ u, U, U005F, U005F, U003C, U003C, U005F, U005F ] };  // Alt: _  Sym: <
+    key <AD08> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ i, I, U002D, U002D, U003E, U003E, U002D, U002D ] };  // Alt: -  Sym: >
+    key <AD09> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ o, O, U002B, U002B, U005E, U005E, U002B, U002B ] };  // Alt: +  Sym: ^
+    key <AD10> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ p, P, U0040, U0040, U0025, U0025, U0040, U0040 ] };  // Alt: @  Sym: %
+    key <AC01> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ a, A, U002A, U002A, U003D, U003D, U002A, U002A ] };  // Alt: *  Sym: =
+    key <AC02> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ s, S, 4, 4, U003B, U003B, 4, 4 ] };  // Alt: 4  Sym: ;
+    key <AC03> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ d, D, 5, 5, U00B1, U00B1, 5, 5 ] };  // Alt: 5  Sym: ±
+    key <AC04> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ f, F, 6, 6, U2013, U2013, 6, 6 ] };  // Alt: 6  Sym: –
+    key <AC05> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ g, G, U002F, U002F, U005C, U005C, U002F, U002F ] };  // Alt: /  Sym: \
+    key <AC06> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ h, H, U003A, U003A, U007C, U007C, U003A, U003A ] };  // Alt: :  Sym: |
+    key <AC07> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ j, J, U0023, U0023, U201E, U201E, U0023, U0023 ] };  // Alt: #  Sym: „
+    key <AC08> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ k, K, U0027, U0027, U201C, U201C, U0027, U0027 ] };  // Alt: '  Sym: “
+    key <AC09> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ l, L, U0022, U0022, U201D, U201D, U0022, U0022 ] };  // Alt: "  Sym: ”
+    key <AB01> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ z, Z, 7, 7, U00BB, U00BB, 7, 7 ] };  // Alt: 7  Sym: »
+    key <AB02> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ x, X, 8, 8, U00AB, U00AB, 8, 8 ] };  // Alt: 8  Sym: «
+    key <AB03> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ c, C, 9, 9, U0026, U0026, 9, 9 ] };  // Alt: 9  Sym: &
+    key <AB04> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ v, V, U003F, U003F, U00BF, U00BF, U003F, U003F ] };  // Alt: ?  Sym: ¿
+    key <AB05> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ b, B, U0021, U0021, U00A1, U00A1, U0021, U0021 ] };  // Alt: !  Sym: ¡
+    key <AB06> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ n, N, U002C, U002C, U00A7, U00A7, U002C, U002C ] };  // Alt: ,  Sym: §
+    key <AB07> { type[Group1] = "EIGHT_LEVEL", symbols[Group1] = [ m, M, U002E, U002E, U00A3, U0024, U002E, U002E ] };  // Alt: .  Sym: £ (Shift: $)
+
+    // Alt = Pastiera Alt layer, Sym (sent by the bridge as Right Alt) = SYM layer.
+    key <LALT> { type[Group1] = "ONE_LEVEL", symbols[Group1] = [ ISO_Level3_Latch ] };
+    key <RALT> { type[Group1] = "ONE_LEVEL", symbols[Group1] = [ ISO_Level5_Latch ] };
+    modifier_map Mod5 { <LALT> };
+    modifier_map Mod3 { <RALT> };
+
+    // Shift: tap = next letter capital, double-tap = caps lock, hold = normal.
+    key <LFSH> { type[Group1] = "ONE_LEVEL", symbols[Group1] = [ ISO_Level2_Latch ] };
+    key <RTSH> { type[Group1] = "ONE_LEVEL", symbols[Group1] = [ ISO_Level2_Latch ] };
+    modifier_map Shift { <LFSH>, <RTSH> };
+};
